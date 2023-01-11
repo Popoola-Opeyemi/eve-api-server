@@ -1,0 +1,57 @@
+### get all model records
+GET http://localhost:4000/api/db/user?_filter=$limit:5,$order:first_name desc
+
+### get model records: test _filter
+GET http://localhost:4000/api/db/user?_sid_=bkaqotocijla5d95n000
+Cookie: session=MTU2NDAwMDE4NnxOd3dBTkVaUlV6WkVSRmROVWs5VVVEUkJWa3hhVFZaWk5EUlNOalV6VFRReVRFSkJVRnBaVEZkSVJUZEVSRTVVVEV0T1VWaENTbEU9fDYEWJMTAgqkNYSIZ73cmE3kvtT0H7ninFAxv3YsFI_r; Path=/; Expires=Fri, 23 Aug 2019 20:29:46 GMT; Max-Age=2592000
+
+### get model records as well: test _filter and _list
+GET http://localhost:4000/api/db/user?_filter=status:>=1,role:2&_list=user-role:>1
+
+### get model record by id
+GET http://localhost:4000/api/db/user/1234
+
+### get model record by field name
+GET http://localhost:4000/api/db/user/first_name/dele
+
+### get model record: test invalid field name
+GET http://localhost:4000/api/db/user/first_names/dele
+
+### create record
+POST http://localhost:4000/api/db/user
+Content-Type: application/json;charset=UTF-8
+
+{
+  "site_id": "bkaqotocijla5d95n000",
+  "first_name" : "demo",
+  "last_name" : "cat",
+  "email" : "democat@mailinator.com",
+  "password": "1234",
+  "role": 1,
+  "status": 1
+}
+
+### update record
+POST http://localhost:4000/api/db/user/bkq5dp8cijl846f6an6g
+Content-Type: application/json;charset=UTF-8
+
+{
+  "id": "bkq5dp8cijl846f6an6g",
+  "site_id": "bkaqotocijla5d95",
+  "first_name" : "solape",
+  "last_name" : "dada",
+  "email" : "sodaa@mailinator.com",
+  "password": "***",
+  "role": 1,
+  "status": 1
+}
+
+### delete record
+DELETE  http://localhost:4000/api/db/user/bkq5lh0cijl9lkno4mpg
+Content-Type: application/json;charset=UTF-8
+
+### get model record by id
+GET http://localhost:4000/api/db/association
+
+### get model record by id
+GET http://host1.localhost:4000/api/db/multi/Street|UnitType

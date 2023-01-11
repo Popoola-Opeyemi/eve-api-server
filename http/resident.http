@@ -1,0 +1,137 @@
+
+# GET OLD RESIDENTS 
+
+###
+GET http://r1.localhost:7000/api/db/OldUnitsResidents?&_filter=$limit:10,$offset:0
+Content-Type: application/json;charset=UTF-8
+
+###
+GET http://r1.localhost:7000/api/db/OldUnitsResidents/c0nv2u8cvcqkp20bapa0?
+Content-Type: application/json;charset=UTF-8
+
+###
+POST http://r1.localhost:7000/api/db/Residency
+Content-Type: application/json;charset=UTF-8
+
+{
+  "id":"c0kf2cgcvcqk9117a7cg",
+  "_model": "Residency",
+  "active_status":1
+}
+
+# END GET OLD RESIDENTS 
+
+# RESIDENCY
+
+###
+POST http://r1.localhost:7000/api/db/Residency
+Content-Type: application/json;charset=UTF-8
+
+{
+  "id":"c0kf2cgcvcqk9117a7cg",
+  "_model": "Residency"
+}
+
+###
+POST http://r1.localhost:7000/api/db/Resident/new?&_list=ResidentView-$limit:10,$offset:0,$order:unit
+Content-Type: application/json;charset=UTF-8
+
+{
+  "id": "",
+  "site_id": "",
+  "can_login": true,
+  "name": "",
+  "first_name": "solid",
+  "last_name": "kunjamata",
+  "email": "solidd@mailinator.com",
+  "phone": "1212",
+  "password": "admin",
+  "attr": { "title": "Mr" },
+  "type": 1,
+  "unit_id": "c0n73a8cvcqhtg3e0qe0",
+  "unit": "",
+  "status": 0,
+  "primary_id": "",
+  "date_start": "2021-01-01",
+  "date_exit": "",
+  "_model": "Resident",
+  "_list": "ResidentFamilyList-$limit:10,$offset:0,primary_id:c0n744ocvcqhtg3e0qhg,$order:name"
+}
+
+# secondary resident 
+###
+POST http://r1.localhost:7000/api/db/Resident/new?&_list=ResidentFamilyList-$limit:10,$offset:0,primary_id:c0n744ocvcqhtg3e0qhg,$order:name
+Content-Type: application/json;charset=UTF-8
+
+{
+  "id": "",
+  "site_id": "",
+  "can_login": true,
+  "name": "",
+  "first_name": "contra",
+  "last_name": "holdem",
+  "email": "contra@mailinator.com",
+  "phone": "1212",
+  "password": "admin",
+  "attr": { "title": "Mr" },
+  "type": 2,
+  "unit_id": "c0n7310cvcqhtg3e0qcg",
+  "unit": "",
+  "status": 0,
+  "primary_id": "c0n744ocvcqhtg3e0qhg",
+  "date_start": "2021-01-01",
+  "date_exit": "",
+  "_model": "Resident",
+  "_list": "ResidentFamilyList-$limit:10,$offset:0,primary_id:c0n744ocvcqhtg3e0qhg,$order:name"
+}
+
+
+###
+GET http://ikeja.localhost:7000/api/resident/dashboard
+Cookie: session=MTYzNDY5OTEwNnxOd3dBTkZsVlR6UlRWRVpYTjBGU1IwVlBSVVJLUmxWS1F6WXlWVFJZTmtjelFsTk1XVkpKVEZGTldGZEpWMEZKUVZrMFdVNVVTa0U9fKIQ8xhJczXa3MqBrB9fgUnMiFrOkRjx08I_BiNV_6kT;
+Content-Type: application/json;charset=UTF-8
+
+
+### to modify the status pass the same values received with the changed field 
+POST http://ikeja.localhost:7000/api/db/ResidentAlert/c1a75t8cvcqjp069j6e0
+Cookie: session=MTYzNDY5OTEwNnxOd3dBTkZsVlR6UlRWRVpYTjBGU1IwVlBSVVJLUmxWS1F6WXlWVFJZTmtjelFsTk1XVkpKVEZGTldGZEpWMEZKUVZrMFdVNVVTa0U9fKIQ8xhJczXa3MqBrB9fgUnMiFrOkRjx08I_BiNV_6kT;
+Content-Type: application/json;charset=UTF-8
+
+{
+  "site_id": "bmclqe223aksfui6bg50",
+  "resident_id": "c1a75t8cvcqjp069j6e0",
+  "status":2,
+  "attr":{}
+}
+
+
+### to create an alert 
+POST http://ikeja.localhost:7000/api/resident/alert
+Cookie: session=MTYzNDY5OTEwNnxOd3dBTkZsVlR6UlRWRVpYTjBGU1IwVlBSVVJLUmxWS1F6WXlWVFJZTmtjelFsTk1XVkpKVEZGTldGZEpWMEZKUVZrMFdVNVVTa0U9fKIQ8xhJczXa3MqBrB9fgUnMiFrOkRjx08I_BiNV_6kT;
+Content-Type: application/json;charset=UTF-8
+
+{
+  "status":1,
+  "attr":{"mboile_info":"android", "location":"block 7"}
+}
+
+### to get the alert using status
+GET http://ikeja.localhost:7000/api/resident/list_alerts?status=1
+Cookie: session=MTYzNTA3NzUxNnxOd3dBTkV0UFJGTkxSVWRSVms1WVNraFBSMHhMUVZKVFFrSlpRa0ZaUkZORE1saEpTRWRIUmsxTU5GSlRRelpRVkVaSVMwdFZXRkU9fOd3_5CWISRlyRO6LrGzJNXiFxzACdolUGH6eixO3jd5;
+Content-Type: application/json;charset=UTF-8
+
+### to get the count of the alert
+GET http://ikeja.localhost:7000/api/resident/alert_count?status=1
+Cookie: session=MTYzNTA3NzUxNnxOd3dBTkV0UFJGTkxSVWRSVms1WVNraFBSMHhMUVZKVFFrSlpRa0ZaUkZORE1saEpTRWRIUmsxTU5GSlRRelpRVkVaSVMwdFZXRkU9fOd3_5CWISRlyRO6LrGzJNXiFxzACdolUGH6eixO3jd5;
+Content-Type: application/json;charset=UTF-8
+
+
+### to modify the status of the alert 
+POST http://ikeja.localhost:7000/api/resident/alert/c5nro28cvcqkle6nr21g
+Cookie: session=MTYzNDY5OTEwNnxOd3dBTkZsVlR6UlRWRVpYTjBGU1IwVlBSVVJLUmxWS1F6WXlWVFJZTmtjelFsTk1XVkpKVEZGTldGZEpWMEZKUVZrMFdVNVVTa0U9fKIQ8xhJczXa3MqBrB9fgUnMiFrOkRjx08I_BiNV_6kT;
+Content-Type: application/json;charset=UTF-8
+
+{
+  "status":1,
+  "attr":{"mboile_info":"android", "location":"block 7"}
+}

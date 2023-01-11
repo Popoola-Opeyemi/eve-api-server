@@ -1,0 +1,63 @@
+### get all model records
+POST http://r1.localhost:7000/api/auth/login/r1
+Content-Type: application/json;charset=UTF-8
+
+{
+  "email":"duppy@mailinator.com",
+  "password": "adminn"
+}
+
+### get all model records
+POST http://r1.localhost:7000/api/auth/login/r1
+Content-Type: application/json;charset=UTF-8
+
+{
+  "email":"dGG@F.COM",
+  "password":"admin",
+  "is_resident":true
+}
+
+### get all model records
+POST http://localhost:4000/api/auth/logout
+Content-Type: application/json;charset=UTF-8
+
+### manager login
+POST http://localhost:4000/api/auth/login/manager
+Content-Type: application/json;charset=UTF-8
+
+{
+  "email" : "defa@user.com",
+  "password": "letmein"
+}
+
+### admin login
+# ikeja is the name of the subdomain 
+POST http://localhost:4000/api/auth/login/ikeja
+Content-Type: application/json;charset=UTF-8
+
+{
+  "email" : "jide@gmail.com",
+  "password": "admin"
+}
+
+
+### resident login
+POST http://localhost:4000/api/auth/login/ikeja
+Content-Type: application/json;charset=UTF-8
+
+{
+  "email" : "pascal.ahmed@gmail.com",
+  "password": "admin",
+  "is_resident":true
+}
+
+### security login
+POST http://localhost:4000/api/auth/login/ikeja
+Content-Type: application/json;charset=UTF-8
+
+{
+  "email" : "ade.love@gmail.com",
+  "password": "admin",
+  "is_resident":false
+}
+

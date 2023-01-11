@@ -1,0 +1,23 @@
+drop view if exists "account_history";
+drop view if exists "bill_list";
+drop view if exists "resident_account_status";
+drop view if exists "resident_due_status";
+drop view if exists "invoice_summary";
+drop view if exists "resident_billing_summary";
+drop view if exists "payment_details_list";
+drop view if exists "payment_list";
+drop view if exists "invoice_list";
+drop view if exists "invoice_master_list";
+drop view if exists "bill_detail_list";
+drop view if exists "security_resident_list";
+drop view if exists "resident_list";
+drop view if exists "secondary_resident_list";
+drop view if exists "visitor_list";
+
+drop table if exists "registration";
+drop table if exists "task_queue";
+drop table if exists "bill_generate";
+drop table if exists "payment";
+drop table if exists "transaction";
+drop table if exists "invoice";
+drop table if exists "invoice_master";

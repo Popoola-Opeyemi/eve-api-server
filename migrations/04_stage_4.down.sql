@@ -1,0 +1,10 @@
+drop table if exists "new_resident_registrations";
+drop table if exists "payment_pending";
+drop table if exists "payment_providers";
+drop table if exists "payment_log";
+drop view if exists "payment_details";
+drop view if exists "old_units_residents";
+drop view if exists "reporting_residents"
+drop view if exists "reporting_payments"
+drop view if exists "reporting_bill";
+drop sequence if exists "payment_sequence";
